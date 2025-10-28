@@ -44,14 +44,13 @@ const Stats = () => {
 					{stats.map((stat, index) => (
 						<div
 							key={index}
-							className='group relative bg-card rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-up border border-border'
+							className='group relative bg-card rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-up border border-border hover:border-primary/50'
 							style={{ animationDelay: `${index * 0.1}s` }}
 						>
-							<div className='absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-
+							<div className='absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 							<div className='relative'>
-								<div className='w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors'>
-									<stat.icon className='w-8 h-8 text-accent' />
+								<div className='w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md'>
+									<stat.icon className='w-8 h-8 text-primary-foreground' />
 								</div>
 
 								<div className='text-4xl font-bold text-primary mb-2'>

@@ -20,9 +20,9 @@ const Contact = () => {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto'>
+				<div className='lg:flex justify-between items-start gap-12 mx-auto'>
 					{/* Contact Information */}
-					<div className='space-y-8 animate-fade-up'>
+					<div className='w-12/12 lg:w-5/12 space-y-8 animate-fade-up'>
 						<div className='bg-card/10 backdrop-blur-sm rounded-xl p-8 border border-primary-foreground/10'>
 							<h3 className='text-2xl font-bold text-accent mb-6'>
 								Contact Information
@@ -95,7 +95,7 @@ const Contact = () => {
 
 					{/* Contact Form */}
 					<div
-						className='bg-card rounded-xl p-8 shadow-2xl animate-fade-up'
+						className='w-12/12 mt-8 lg:mt-0 lg:w-7/12 bg-card rounded-xl p-8 shadow-2xl animate-fade-up'
 						style={{ animationDelay: '0.2s' }}
 					>
 						<h3 className='text-2xl font-bold text-foreground mb-6'>

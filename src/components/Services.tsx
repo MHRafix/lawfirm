@@ -32,6 +32,18 @@ const services = [
 			'Ensure compliance with labor laws and resolve workplace disputes effectively.',
 	},
 	{
+		icon: Users,
+		title: 'Employment Law',
+		description:
+			'Ensure compliance with labor laws and resolve workplace disputes effectively.',
+	},
+	{
+		icon: Shield,
+		title: 'Intellectual Property',
+		description:
+			'Protect your innovations, trademarks, patents, and creative works globally.',
+	},
+	{
 		icon: Shield,
 		title: 'Intellectual Property',
 		description:
@@ -52,21 +64,21 @@ const Services = () => {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto'>
 					{services.map((service, index) => (
 						<div
 							key={index}
-							className='group relative bg-card rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-up border border-border hover:border-accent/50'
+							className='group relative bg-card rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-up border border-border hover:border-primary/50'
 							style={{ animationDelay: `${index * 0.1}s` }}
 						>
-							<div className='absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+							<div className='absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 
 							<div className='relative'>
 								<div className='w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md'>
 									<service.icon className='w-8 h-8 text-primary-foreground' />
 								</div>
 
-								<h3 className='text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors'>
+								<h3 className='text-2xl font-bold text-foreground mb-3 transition-colors'>
 									{service.title}
 								</h3>
 

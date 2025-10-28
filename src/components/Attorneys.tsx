@@ -45,6 +45,46 @@ const attorneys = [
 			email: 'layla.hassan@lawfirm.com',
 		},
 	},
+	{
+		name: 'Arjun Patel',
+		specialty: 'Corporate & Commercial Law',
+		image: attorney1,
+		social: {
+			linkedin: '#',
+			twitter: '#',
+			email: 'arjun.patel@lawfirm.com',
+		},
+	},
+	{
+		name: 'Mei Chen',
+		specialty: 'International Trade Law',
+		image: attorney2,
+		social: {
+			linkedin: '#',
+			twitter: '#',
+			email: 'mei.chen@lawfirm.com',
+		},
+	},
+	{
+		name: 'Marcus Williams',
+		specialty: 'Real Estate & Property Law',
+		image: attorney3,
+		social: {
+			linkedin: '#',
+			twitter: '#',
+			email: 'marcus.williams@lawfirm.com',
+		},
+	},
+	{
+		name: 'Layla Hassan',
+		specialty: 'Intellectual Property Rights',
+		image: attorney4,
+		social: {
+			linkedin: '#',
+			twitter: '#',
+			email: 'layla.hassan@lawfirm.com',
+		},
+	},
 ];
 
 const Attorneys = () => {
@@ -60,7 +100,7 @@ const Attorneys = () => {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto'>
 					{attorneys.map((attorney, index) => (
 						<div
 							key={index}
@@ -104,7 +144,7 @@ const Attorneys = () => {
 							</div>
 
 							<div className='p-6'>
-								<h3 className='text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors'>
+								<h3 className='text-xl font-bold text-foreground mb-2 transition-colors'>
 									{attorney.name}
 								</h3>
 								<p className='text-muted-foreground text-sm'>

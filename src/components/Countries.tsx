@@ -1,49 +1,6 @@
-import { MapPin } from 'lucide-react';
-
-const countries = [
-	{
-		name: 'United States',
-		flag: '🇺🇸',
-		description:
-			'Comprehensive corporate and commercial legal services across all 50 states.',
-	},
-	{
-		name: 'United Kingdom',
-		flag: '🇬🇧',
-		description:
-			'Expert guidance in European business law and international trade regulations.',
-	},
-	{
-		name: 'Singapore',
-		flag: '🇸🇬',
-		description:
-			'Leading practice in Asian Pacific commercial law and maritime legal services.',
-	},
-	{
-		name: 'Malaysia',
-		flag: '🇲🇾',
-		description:
-			'Specialized in Southeast Asian investment law and corporate transactions.',
-	},
-	{
-		name: 'Vietnam',
-		flag: '🇻🇳',
-		description:
-			'Growing expertise in foreign investment and intellectual property rights.',
-	},
-	{
-		name: 'India',
-		flag: '🇮🇳',
-		description:
-			'Extensive knowledge in Indian corporate law and cross-border transactions.',
-	},
-	{
-		name: 'Bangladesh',
-		flag: '🇧🇩',
-		description:
-			'Flagship office with comprehensive legal services and deep local expertise.',
-	},
-];
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle } from 'lucide-react';
 
 const Countries = () => {
 	return (
@@ -58,36 +15,41 @@ const Countries = () => {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto'>
-					{countries.map((country, index) => (
-						<div
-							key={country.name}
-							className={`group relative bg-card rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 animate-fade-up border border-border ${
-								country.name === 'Bangladesh'
-									? 'lg:col-span-2 xl:col-span-1'
-									: ''
-							}`}
-							style={{ animationDelay: `${index * 0.05}s` }}
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto'>
+					{services.map((service, index) => (
+						<Card
+							key={index}
+							className='py-0 flex flex-col h-full overflow-hidden rounded-xl shadow-lg text-primary cursor-pointer transition-all hover:shadow-xl'
 						>
-							<div className='absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-
 							<div className='relative'>
-								<div className='flex items-start justify-between mb-4'>
-									<div className='w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-4xl shadow-sm group-hover:scale-110 transition-transform'>
-										{country.flag}
-									</div>
-									<MapPin className='w-5 h-5 text-accent' />
+								<img
+									src={service.image}
+									alt={`${service.country} Legal Aid`}
+									className='w-full h-48 object-cover opacity-90'
+								/>
+								<div className='font-bold absolute bottom-3 left-3 bg-primary px-4 py-1 rounded-full text-sm shadow-md text-white'>
+									{service.country}
 								</div>
-
-								<h3 className='text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors'>
-									{country.name}
-								</h3>
-
-								<p className='text-muted-foreground text-sm leading-relaxed'>
-									{country.description}
-								</p>
 							</div>
-						</div>
+							<CardContent className='flex flex-col flex-grow px-4 pb-4 space-y-4'>
+								<h2 className='text-xl font-bold tracking-tight'>
+									Legal Aid Services in {service.country}
+								</h2>
+								<ul className='space-y-3 flex-grow'>
+									{service.points.map((point, i) => (
+										<li key={i} className='flex items-center gap-3'>
+											<CheckCircle className='text-teal-500 w-5 h-5' />
+											{point}
+										</li>
+									))}
+								</ul>
+								<div className='mt-auto'>
+									<Button className='py-3 w-full flex items-center justify-center gap-2 bg-primary cursor-pointer font-semibold rounded-xl shadow-md transition-all text-lg text-white'>
+										Learn More
+									</Button>
+								</div>
+							</CardContent>
+						</Card>
 					))}
 				</div>
 			</div>
@@ -96,3 +58,46 @@ const Countries = () => {
 };
 
 export default Countries;
+
+const services = [
+	{
+		country: 'United States',
+		image:
+			'https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGxlZ2FsJTIwYWlkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500',
+		points: [
+			'Expert legal advisors',
+			'Free consultation',
+			'Nationwide coverage',
+		],
+	},
+	{
+		country: 'United Kingdom',
+		image:
+			'https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGxlZ2FsJTIwYWlkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500',
+		points: [
+			'Qualified solicitors',
+			'Affordable assistance',
+			'Fast legal solutions',
+		],
+	},
+	{
+		country: 'Canada',
+		image:
+			'https://plus.unsplash.com/premium_photo-1661497281000-b5ecb39a2114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGxlZ2FsJTIwYWlkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500',
+		points: [
+			'Bilingual legal support',
+			'Trusted professionals',
+			'Accessible nationwide',
+		],
+	},
+	{
+		country: 'Australia',
+		image:
+			'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80',
+		points: [
+			'Community legal services',
+			'24/7 support',
+			'Expert lawyers network',
+		],
+	},
+];
